@@ -1,0 +1,40 @@
+﻿@{
+    @model SportsStorenew.Service.Models.GetProductsReasponse
+
+}
+<style>
+    .myDiv {
+        margin-right: 500px;
+    }
+</style>
+
+<body style="background-color:powderblue;">
+    <table>
+        @{
+            <tr>
+                        <td>
+
+
+                            @foreach (var item1 in Model.Products)
+                            {
+                                <table>
+                                    <tr>
+                                        <td>@item1.Name</td>
+                                    </tr>
+                                </table>
+                                <table>
+                                    <tr>
+                                        <td>@item1.Price</td>
+                                    </tr>
+                                </table>
+
+                            }
+
+
+                        </td>
+
+            </tr>
+        }
+    </table>
+
+</body>
