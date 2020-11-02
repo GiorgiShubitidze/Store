@@ -1,0 +1,21 @@
+﻿@{
+    @model ICollection<SportsStorenew.Domain.ProductDetails>
+
+}
+
+
+<body style="background-color:whitesmoke;margin:70px">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
+            <div class="card col-3 mb-3 p-1">
+                <img class="card-img-top" src="@item.DetailsImageUrl " alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">  @item.ProductName </h5>
+
+                </div>
+            </div>
+        }
+    </div>
+</body>

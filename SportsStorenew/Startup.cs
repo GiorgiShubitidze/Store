@@ -56,6 +56,7 @@ namespace SportsStorenew
                        name: "default",
                        pattern: "{categoryName}",
                        defaults: new { controller = "Home", Action = "Index" });
+               
 
                 endpoints.MapControllerRoute(
                     name: "default",

@@ -2,39 +2,31 @@
     @model SportsStorenew.Service.Models.GetProductsReasponse
 
 }
-<style>
-    .myDiv {
-        margin-right: 500px;
-    }
-</style>
-
-<body style="background-color:powderblue;">
-    <table>
-        @{
-            <tr>
-                        <td>
 
 
-                            @foreach (var item1 in Model.Products)
-                            {
-                                <table>
-                                    <tr>
-                                        <td>@item1.Name</td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td>@item1.Price</td>
-                                    </tr>
-                                </table>
-
-                            }
+<body style="background-color:whitesmoke;margin:70px">
 
 
-                        </td>
 
-            </tr>
+    
+    <div class="row">
+        
+        @foreach (var item in Model.Products)
+        {
+           // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
+            <div class="card col-3 mb-3 p-1">
+                <a href="@Url.Action("Details" , new { Id = item.ProductId })">
+                    <img class="card-img-top" src="@item.ThumbnailUrl " alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">  @Html.ActionLink(@item.Name, "Details", new { Id = item.ProductId }) </h5>
+                        <p class="card-text">Price : @item.Price</p>
+                    </div>
+                    </a>
+            </div>
         }
-    </table>
+    </div>
+    
+       
+    
 
 </body>

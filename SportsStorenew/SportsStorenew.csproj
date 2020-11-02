@@ -21,10 +21,13 @@
     <Compile Remove="Migrations\20201101124834_HasDataProductImage.Designer.cs" />
     <Compile Remove="Migrations\20201101130605_HasDataProductImages.cs" />
     <Compile Remove="Migrations\20201101130605_HasDataProductImages.Designer.cs" />
+    <Compile Remove="Migrations\20201102055300_HasDataProductImagesNew.cs" />
+    <Compile Remove="Migrations\20201102055300_HasDataProductImagesNew.Designer.cs" />
+    <Compile Remove="Migrations\20201102061255_HasDataNewImage.cs" />
+    <Compile Remove="Migrations\20201102061255_HasDataNewImage.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">

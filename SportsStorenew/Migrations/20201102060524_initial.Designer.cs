@@ -9,7 +9,7 @@ using SportsStorenew.Domain.DB;
 namespace SportsStorenew.Migrations
 {
     [DbContext(typeof(SportsStoreDbContext))]
-    [Migration("20201101130946_initial")]
+    [Migration("20201102060524_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

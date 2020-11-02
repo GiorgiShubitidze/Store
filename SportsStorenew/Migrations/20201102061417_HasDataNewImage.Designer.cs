@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SportsStorenew.Domain.DB;
 
 namespace SportsStorenew.Migrations
 {
     [DbContext(typeof(SportsStoreDbContext))]
-    partial class SportsStoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201102061417_HasDataNewImage")]
+    partial class HasDataNewImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

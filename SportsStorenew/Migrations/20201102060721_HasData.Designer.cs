@@ -9,8 +9,8 @@ using SportsStorenew.Domain.DB;
 namespace SportsStorenew.Migrations
 {
     [DbContext(typeof(SportsStoreDbContext))]
-    [Migration("20201101131408_HasDataProductImages")]
-    partial class HasDataProductImages
+    [Migration("20201102060721_HasData")]
+    partial class HasData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -61,21 +61,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 1,
-                            CategoryId = 5,
+                            CategoryId = 4,
                             Name = "Product 1",
                             Price = 21m
                         },
                         new
                         {
                             ProductId = 2,
-                            CategoryId = 1,
+                            CategoryId = 3,
                             Name = "Product 2",
                             Price = 22m
                         },
                         new
                         {
                             ProductId = 3,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 3",
                             Price = 23m
                         },
@@ -89,21 +89,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 5,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 5",
                             Price = 25m
                         },
                         new
                         {
                             ProductId = 6,
-                            CategoryId = 1,
+                            CategoryId = 4,
                             Name = "Product 6",
                             Price = 26m
                         },
                         new
                         {
                             ProductId = 7,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Name = "Product 7",
                             Price = 27m
                         },
@@ -117,49 +117,49 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 9,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 9",
                             Price = 29m
                         },
                         new
                         {
                             ProductId = 10,
-                            CategoryId = 3,
+                            CategoryId = 5,
                             Name = "Product 10",
                             Price = 30m
                         },
                         new
                         {
                             ProductId = 11,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 11",
                             Price = 31m
                         },
                         new
                         {
                             ProductId = 12,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 12",
                             Price = 32m
                         },
                         new
                         {
                             ProductId = 13,
-                            CategoryId = 1,
+                            CategoryId = 5,
                             Name = "Product 13",
                             Price = 33m
                         },
                         new
                         {
                             ProductId = 14,
-                            CategoryId = 5,
+                            CategoryId = 3,
                             Name = "Product 14",
                             Price = 34m
                         },
                         new
                         {
                             ProductId = 15,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Name = "Product 15",
                             Price = 35m
                         },
@@ -173,14 +173,14 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 17,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 17",
                             Price = 37m
                         },
                         new
                         {
                             ProductId = 18,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 18",
                             Price = 38m
                         },
@@ -194,7 +194,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 20,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 20",
                             Price = 40m
                         },
@@ -208,7 +208,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 22,
-                            CategoryId = 5,
+                            CategoryId = 3,
                             Name = "Product 22",
                             Price = 42m
                         },
@@ -229,7 +229,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 25,
-                            CategoryId = 5,
+                            CategoryId = 3,
                             Name = "Product 25",
                             Price = 45m
                         },
@@ -243,14 +243,14 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 27,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 27",
                             Price = 47m
                         },
                         new
                         {
                             ProductId = 28,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Name = "Product 28",
                             Price = 48m
                         },
@@ -264,21 +264,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 30,
-                            CategoryId = 1,
+                            CategoryId = 4,
                             Name = "Product 30",
                             Price = 50m
                         },
                         new
                         {
                             ProductId = 31,
-                            CategoryId = 3,
+                            CategoryId = 5,
                             Name = "Product 31",
                             Price = 51m
                         },
                         new
                         {
                             ProductId = 32,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Name = "Product 32",
                             Price = 52m
                         },
@@ -292,49 +292,49 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 34,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 34",
                             Price = 54m
                         },
                         new
                         {
                             ProductId = 35,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 35",
                             Price = 55m
                         },
                         new
                         {
                             ProductId = 36,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 36",
                             Price = 56m
                         },
                         new
                         {
                             ProductId = 37,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 37",
                             Price = 57m
                         },
                         new
                         {
                             ProductId = 38,
-                            CategoryId = 1,
+                            CategoryId = 3,
                             Name = "Product 38",
                             Price = 58m
                         },
                         new
                         {
                             ProductId = 39,
-                            CategoryId = 1,
+                            CategoryId = 5,
                             Name = "Product 39",
                             Price = 59m
                         },
                         new
                         {
                             ProductId = 40,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 40",
                             Price = 60m
                         },
@@ -355,49 +355,49 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 43,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 43",
                             Price = 63m
                         },
                         new
                         {
                             ProductId = 44,
-                            CategoryId = 3,
+                            CategoryId = 1,
                             Name = "Product 44",
                             Price = 64m
                         },
                         new
                         {
                             ProductId = 45,
-                            CategoryId = 2,
+                            CategoryId = 5,
                             Name = "Product 45",
                             Price = 65m
                         },
                         new
                         {
                             ProductId = 46,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Name = "Product 46",
                             Price = 66m
                         },
                         new
                         {
                             ProductId = 47,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 47",
                             Price = 67m
                         },
                         new
                         {
                             ProductId = 48,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Name = "Product 48",
                             Price = 68m
                         },
                         new
                         {
                             ProductId = 49,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 49",
                             Price = 69m
                         },
@@ -411,7 +411,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 51,
-                            CategoryId = 2,
+                            CategoryId = 1,
                             Name = "Product 51",
                             Price = 71m
                         },
@@ -425,21 +425,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 53,
-                            CategoryId = 4,
+                            CategoryId = 2,
                             Name = "Product 53",
                             Price = 73m
                         },
                         new
                         {
                             ProductId = 54,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 54",
                             Price = 74m
                         },
                         new
                         {
                             ProductId = 55,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 55",
                             Price = 75m
                         },
@@ -453,28 +453,28 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 57,
-                            CategoryId = 1,
+                            CategoryId = 3,
                             Name = "Product 57",
                             Price = 77m
                         },
                         new
                         {
                             ProductId = 58,
-                            CategoryId = 2,
+                            CategoryId = 3,
                             Name = "Product 58",
                             Price = 78m
                         },
                         new
                         {
                             ProductId = 59,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 59",
                             Price = 79m
                         },
                         new
                         {
                             ProductId = 60,
-                            CategoryId = 3,
+                            CategoryId = 5,
                             Name = "Product 60",
                             Price = 80m
                         },
@@ -488,7 +488,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 62,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 62",
                             Price = 82m
                         },
@@ -502,7 +502,7 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 64,
-                            CategoryId = 3,
+                            CategoryId = 1,
                             Name = "Product 64",
                             Price = 84m
                         },
@@ -516,70 +516,70 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 66,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 66",
                             Price = 86m
                         },
                         new
                         {
                             ProductId = 67,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 67",
                             Price = 87m
                         },
                         new
                         {
                             ProductId = 68,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 68",
                             Price = 88m
                         },
                         new
                         {
                             ProductId = 69,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 69",
                             Price = 89m
                         },
                         new
                         {
                             ProductId = 70,
-                            CategoryId = 4,
+                            CategoryId = 2,
                             Name = "Product 70",
                             Price = 90m
                         },
                         new
                         {
                             ProductId = 71,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 71",
                             Price = 91m
                         },
                         new
                         {
                             ProductId = 72,
-                            CategoryId = 5,
+                            CategoryId = 4,
                             Name = "Product 72",
                             Price = 92m
                         },
                         new
                         {
                             ProductId = 73,
-                            CategoryId = 5,
+                            CategoryId = 2,
                             Name = "Product 73",
                             Price = 93m
                         },
                         new
                         {
                             ProductId = 74,
-                            CategoryId = 5,
+                            CategoryId = 1,
                             Name = "Product 74",
                             Price = 94m
                         },
                         new
                         {
                             ProductId = 75,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 75",
                             Price = 95m
                         },
@@ -593,56 +593,56 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 77,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 77",
                             Price = 97m
                         },
                         new
                         {
                             ProductId = 78,
-                            CategoryId = 3,
+                            CategoryId = 4,
                             Name = "Product 78",
                             Price = 98m
                         },
                         new
                         {
                             ProductId = 79,
-                            CategoryId = 3,
+                            CategoryId = 1,
                             Name = "Product 79",
                             Price = 99m
                         },
                         new
                         {
                             ProductId = 80,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Name = "Product 80",
                             Price = 100m
                         },
                         new
                         {
                             ProductId = 81,
-                            CategoryId = 4,
+                            CategoryId = 2,
                             Name = "Product 81",
                             Price = 101m
                         },
                         new
                         {
                             ProductId = 82,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 82",
                             Price = 102m
                         },
                         new
                         {
                             ProductId = 83,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 83",
                             Price = 103m
                         },
                         new
                         {
                             ProductId = 84,
-                            CategoryId = 4,
+                            CategoryId = 3,
                             Name = "Product 84",
                             Price = 104m
                         },
@@ -656,49 +656,49 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 86,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 86",
                             Price = 106m
                         },
                         new
                         {
                             ProductId = 87,
-                            CategoryId = 1,
+                            CategoryId = 2,
                             Name = "Product 87",
                             Price = 107m
                         },
                         new
                         {
                             ProductId = 88,
-                            CategoryId = 3,
+                            CategoryId = 2,
                             Name = "Product 88",
                             Price = 108m
                         },
                         new
                         {
                             ProductId = 89,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 89",
                             Price = 109m
                         },
                         new
                         {
                             ProductId = 90,
-                            CategoryId = 5,
+                            CategoryId = 1,
                             Name = "Product 90",
                             Price = 110m
                         },
                         new
                         {
                             ProductId = 91,
-                            CategoryId = 2,
+                            CategoryId = 4,
                             Name = "Product 91",
                             Price = 111m
                         },
                         new
                         {
                             ProductId = 92,
-                            CategoryId = 1,
+                            CategoryId = 5,
                             Name = "Product 92",
                             Price = 112m
                         },
@@ -712,21 +712,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 94,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 94",
                             Price = 114m
                         },
                         new
                         {
                             ProductId = 95,
-                            CategoryId = 1,
+                            CategoryId = 5,
                             Name = "Product 95",
                             Price = 115m
                         },
                         new
                         {
                             ProductId = 96,
-                            CategoryId = 5,
+                            CategoryId = 4,
                             Name = "Product 96",
                             Price = 116m
                         },
@@ -740,21 +740,21 @@ namespace SportsStorenew.Migrations
                         new
                         {
                             ProductId = 98,
-                            CategoryId = 4,
+                            CategoryId = 1,
                             Name = "Product 98",
                             Price = 118m
                         },
                         new
                         {
                             ProductId = 99,
-                            CategoryId = 4,
+                            CategoryId = 2,
                             Name = "Product 99",
                             Price = 119m
                         },
                         new
                         {
                             ProductId = 100,
-                            CategoryId = 5,
+                            CategoryId = 1,
                             Name = "Product 100",
                             Price = 120m
                         });
@@ -787,651 +787,651 @@ namespace SportsStorenew.Migrations
                         {
                             ProductImageId = 1,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 7
+                            IsThumbnail = true,
+                            ProductId = 1
                         },
                         new
                         {
                             ProductImageId = 2,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 12
+                            IsThumbnail = true,
+                            ProductId = 2
                         },
                         new
                         {
                             ProductImageId = 3,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 55
+                            ProductId = 3
                         },
                         new
                         {
                             ProductImageId = 4,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 65
+                            ProductId = 4
                         },
                         new
                         {
                             ProductImageId = 5,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 34
+                            ProductId = 5
                         },
                         new
                         {
                             ProductImageId = 6,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 75
+                            ProductId = 6
                         },
                         new
                         {
                             ProductImageId = 7,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 20
-                        },
-                        new
-                        {
-                            ProductImageId = 8,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 18
-                        },
-                        new
-                        {
-                            ProductImageId = 9,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 39
-                        },
-                        new
-                        {
-                            ProductImageId = 10,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 18
-                        },
-                        new
-                        {
-                            ProductImageId = 11,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 94
-                        },
-                        new
-                        {
-                            ProductImageId = 12,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 92
-                        },
-                        new
-                        {
-                            ProductImageId = 13,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 42
-                        },
-                        new
-                        {
-                            ProductImageId = 14,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 15
-                        },
-                        new
-                        {
-                            ProductImageId = 15,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 43
-                        },
-                        new
-                        {
-                            ProductImageId = 16,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 100
-                        },
-                        new
-                        {
-                            ProductImageId = 17,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 52
-                        },
-                        new
-                        {
-                            ProductImageId = 18,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 54
-                        },
-                        new
-                        {
-                            ProductImageId = 19,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 23
-                        },
-                        new
-                        {
-                            ProductImageId = 20,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 24
-                        },
-                        new
-                        {
-                            ProductImageId = 21,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 42
-                        },
-                        new
-                        {
-                            ProductImageId = 22,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 1
-                        },
-                        new
-                        {
-                            ProductImageId = 23,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 62
-                        },
-                        new
-                        {
-                            ProductImageId = 24,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 11
-                        },
-                        new
-                        {
-                            ProductImageId = 25,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 84
-                        },
-                        new
-                        {
-                            ProductImageId = 26,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 53
-                        },
-                        new
-                        {
-                            ProductImageId = 27,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 55
-                        },
-                        new
-                        {
-                            ProductImageId = 28,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 90
-                        },
-                        new
-                        {
-                            ProductImageId = 29,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 61
-                        },
-                        new
-                        {
-                            ProductImageId = 30,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 73
-                        },
-                        new
-                        {
-                            ProductImageId = 31,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 93
-                        },
-                        new
-                        {
-                            ProductImageId = 32,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 67
-                        },
-                        new
-                        {
-                            ProductImageId = 33,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 46
-                        },
-                        new
-                        {
-                            ProductImageId = 34,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 35
-                        },
-                        new
-                        {
-                            ProductImageId = 35,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 34
-                        },
-                        new
-                        {
-                            ProductImageId = 36,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 56
-                        },
-                        new
-                        {
-                            ProductImageId = 37,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 43
-                        },
-                        new
-                        {
-                            ProductImageId = 38,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 90
-                        },
-                        new
-                        {
-                            ProductImageId = 39,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 22
-                        },
-                        new
-                        {
-                            ProductImageId = 40,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 81
-                        },
-                        new
-                        {
-                            ProductImageId = 41,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 42
-                        },
-                        new
-                        {
-                            ProductImageId = 42,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 15
-                        },
-                        new
-                        {
-                            ProductImageId = 43,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 50
-                        },
-                        new
-                        {
-                            ProductImageId = 44,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 14
-                        },
-                        new
-                        {
-                            ProductImageId = 45,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 94
-                        },
-                        new
-                        {
-                            ProductImageId = 46,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 16
-                        },
-                        new
-                        {
-                            ProductImageId = 47,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 80
-                        },
-                        new
-                        {
-                            ProductImageId = 48,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 69
-                        },
-                        new
-                        {
-                            ProductImageId = 49,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 79
-                        },
-                        new
-                        {
-                            ProductImageId = 50,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 4
-                        },
-                        new
-                        {
-                            ProductImageId = 51,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 91
-                        },
-                        new
-                        {
-                            ProductImageId = 52,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 49
-                        },
-                        new
-                        {
-                            ProductImageId = 53,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 62
-                        },
-                        new
-                        {
-                            ProductImageId = 54,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 60
-                        },
-                        new
-                        {
-                            ProductImageId = 55,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 76
-                        },
-                        new
-                        {
-                            ProductImageId = 56,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 64
-                        },
-                        new
-                        {
-                            ProductImageId = 57,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 89
-                        },
-                        new
-                        {
-                            ProductImageId = 58,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 61
-                        },
-                        new
-                        {
-                            ProductImageId = 59,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 53
-                        },
-                        new
-                        {
-                            ProductImageId = 60,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 82
-                        },
-                        new
-                        {
-                            ProductImageId = 61,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 94
-                        },
-                        new
-                        {
-                            ProductImageId = 62,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = true,
-                            ProductId = 42
-                        },
-                        new
-                        {
-                            ProductImageId = 63,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 26
-                        },
-                        new
-                        {
-                            ProductImageId = 64,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
                             ProductId = 7
                         },
                         new
                         {
-                            ProductImageId = 65,
+                            ProductImageId = 8,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 88
+                            ProductId = 8
                         },
                         new
                         {
-                            ProductImageId = 66,
+                            ProductImageId = 9,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 71
+                            ProductId = 9
                         },
                         new
                         {
-                            ProductImageId = 67,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 40
-                        },
-                        new
-                        {
-                            ProductImageId = 68,
+                            ProductImageId = 10,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 26
+                            ProductId = 10
                         },
                         new
                         {
-                            ProductImageId = 69,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 84
-                        },
-                        new
-                        {
-                            ProductImageId = 70,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 64
-                        },
-                        new
-                        {
-                            ProductImageId = 71,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 37
-                        },
-                        new
-                        {
-                            ProductImageId = 72,
+                            ProductImageId = 11,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
                             ProductId = 11
                         },
                         new
                         {
-                            ProductImageId = 73,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 6
-                        },
-                        new
-                        {
-                            ProductImageId = 74,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 66
-                        },
-                        new
-                        {
-                            ProductImageId = 75,
+                            ProductImageId = 12,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 62
+                            ProductId = 12
                         },
                         new
                         {
-                            ProductImageId = 76,
+                            ProductImageId = 13,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 13
+                        },
+                        new
+                        {
+                            ProductImageId = 14,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 14
+                        },
+                        new
+                        {
+                            ProductImageId = 15,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 15
+                        },
+                        new
+                        {
+                            ProductImageId = 16,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 16
+                        },
+                        new
+                        {
+                            ProductImageId = 17,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 17
+                        },
+                        new
+                        {
+                            ProductImageId = 18,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 18
+                        },
+                        new
+                        {
+                            ProductImageId = 19,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 19
+                        },
+                        new
+                        {
+                            ProductImageId = 20,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 20
+                        },
+                        new
+                        {
+                            ProductImageId = 21,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 21
+                        },
+                        new
+                        {
+                            ProductImageId = 22,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 22
+                        },
+                        new
+                        {
+                            ProductImageId = 23,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
                             ProductId = 23
                         },
                         new
                         {
-                            ProductImageId = 77,
+                            ProductImageId = 24,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 88
+                            ProductId = 24
                         },
                         new
                         {
-                            ProductImageId = 78,
+                            ProductImageId = 25,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 62
+                            IsThumbnail = true,
+                            ProductId = 25
                         },
                         new
                         {
-                            ProductImageId = 79,
+                            ProductImageId = 26,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 26
+                        },
+                        new
+                        {
+                            ProductImageId = 27,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 27
+                        },
+                        new
+                        {
+                            ProductImageId = 28,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 28
+                        },
+                        new
+                        {
+                            ProductImageId = 29,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 29
+                        },
+                        new
+                        {
+                            ProductImageId = 30,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 30
+                        },
+                        new
+                        {
+                            ProductImageId = 31,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 31
+                        },
+                        new
+                        {
+                            ProductImageId = 32,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 32
+                        },
+                        new
+                        {
+                            ProductImageId = 33,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
                             ProductId = 33
                         },
                         new
                         {
-                            ProductImageId = 80,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 17
-                        },
-                        new
-                        {
-                            ProductImageId = 81,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 60
-                        },
-                        new
-                        {
-                            ProductImageId = 82,
+                            ProductImageId = 34,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 12
+                            ProductId = 34
                         },
                         new
                         {
-                            ProductImageId = 83,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 71
-                        },
-                        new
-                        {
-                            ProductImageId = 84,
+                            ProductImageId = 35,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 79
+                            ProductId = 35
                         },
                         new
                         {
-                            ProductImageId = 85,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 31
-                        },
-                        new
-                        {
-                            ProductImageId = 86,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 76
-                        },
-                        new
-                        {
-                            ProductImageId = 87,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 78
-                        },
-                        new
-                        {
-                            ProductImageId = 88,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 12
-                        },
-                        new
-                        {
-                            ProductImageId = 89,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 38
-                        },
-                        new
-                        {
-                            ProductImageId = 90,
-                            ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 59
-                        },
-                        new
-                        {
-                            ProductImageId = 91,
+                            ProductImageId = 36,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
                             ProductId = 36
                         },
                         new
                         {
+                            ProductImageId = 37,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 37
+                        },
+                        new
+                        {
+                            ProductImageId = 38,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 38
+                        },
+                        new
+                        {
+                            ProductImageId = 39,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 39
+                        },
+                        new
+                        {
+                            ProductImageId = 40,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 40
+                        },
+                        new
+                        {
+                            ProductImageId = 41,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 41
+                        },
+                        new
+                        {
+                            ProductImageId = 42,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 42
+                        },
+                        new
+                        {
+                            ProductImageId = 43,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 43
+                        },
+                        new
+                        {
+                            ProductImageId = 44,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 44
+                        },
+                        new
+                        {
+                            ProductImageId = 45,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 45
+                        },
+                        new
+                        {
+                            ProductImageId = 46,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 46
+                        },
+                        new
+                        {
+                            ProductImageId = 47,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 47
+                        },
+                        new
+                        {
+                            ProductImageId = 48,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 48
+                        },
+                        new
+                        {
+                            ProductImageId = 49,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 49
+                        },
+                        new
+                        {
+                            ProductImageId = 50,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 50
+                        },
+                        new
+                        {
+                            ProductImageId = 51,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 51
+                        },
+                        new
+                        {
+                            ProductImageId = 52,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 52
+                        },
+                        new
+                        {
+                            ProductImageId = 53,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 53
+                        },
+                        new
+                        {
+                            ProductImageId = 54,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 54
+                        },
+                        new
+                        {
+                            ProductImageId = 55,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 55
+                        },
+                        new
+                        {
+                            ProductImageId = 56,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 56
+                        },
+                        new
+                        {
+                            ProductImageId = 57,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 57
+                        },
+                        new
+                        {
+                            ProductImageId = 58,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 58
+                        },
+                        new
+                        {
+                            ProductImageId = 59,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 59
+                        },
+                        new
+                        {
+                            ProductImageId = 60,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 60
+                        },
+                        new
+                        {
+                            ProductImageId = 61,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 61
+                        },
+                        new
+                        {
+                            ProductImageId = 62,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 62
+                        },
+                        new
+                        {
+                            ProductImageId = 63,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 63
+                        },
+                        new
+                        {
+                            ProductImageId = 64,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 64
+                        },
+                        new
+                        {
+                            ProductImageId = 65,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 65
+                        },
+                        new
+                        {
+                            ProductImageId = 66,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 66
+                        },
+                        new
+                        {
+                            ProductImageId = 67,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 67
+                        },
+                        new
+                        {
+                            ProductImageId = 68,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 68
+                        },
+                        new
+                        {
+                            ProductImageId = 69,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 69
+                        },
+                        new
+                        {
+                            ProductImageId = 70,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 70
+                        },
+                        new
+                        {
+                            ProductImageId = 71,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 71
+                        },
+                        new
+                        {
+                            ProductImageId = 72,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 72
+                        },
+                        new
+                        {
+                            ProductImageId = 73,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 73
+                        },
+                        new
+                        {
+                            ProductImageId = 74,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 74
+                        },
+                        new
+                        {
+                            ProductImageId = 75,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 75
+                        },
+                        new
+                        {
+                            ProductImageId = 76,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 76
+                        },
+                        new
+                        {
+                            ProductImageId = 77,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 77
+                        },
+                        new
+                        {
+                            ProductImageId = 78,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 78
+                        },
+                        new
+                        {
+                            ProductImageId = 79,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 79
+                        },
+                        new
+                        {
+                            ProductImageId = 80,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 80
+                        },
+                        new
+                        {
+                            ProductImageId = 81,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 81
+                        },
+                        new
+                        {
+                            ProductImageId = 82,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 82
+                        },
+                        new
+                        {
+                            ProductImageId = 83,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 83
+                        },
+                        new
+                        {
+                            ProductImageId = 84,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 84
+                        },
+                        new
+                        {
+                            ProductImageId = 85,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 85
+                        },
+                        new
+                        {
+                            ProductImageId = 86,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 86
+                        },
+                        new
+                        {
+                            ProductImageId = 87,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 87
+                        },
+                        new
+                        {
+                            ProductImageId = 88,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 88
+                        },
+                        new
+                        {
+                            ProductImageId = 89,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 89
+                        },
+                        new
+                        {
+                            ProductImageId = 90,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 90
+                        },
+                        new
+                        {
+                            ProductImageId = 91,
+                            ImageUrl = "https://via.placeholder.com/150",
+                            IsThumbnail = true,
+                            ProductId = 91
+                        },
+                        new
+                        {
                             ProductImageId = 92,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 61
+                            IsThumbnail = true,
+                            ProductId = 92
                         },
                         new
                         {
                             ProductImageId = 93,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
+                            IsThumbnail = true,
                             ProductId = 93
                         },
                         new
@@ -1439,49 +1439,49 @@ namespace SportsStorenew.Migrations
                             ProductImageId = 94,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 65
+                            ProductId = 94
                         },
                         new
                         {
                             ProductImageId = 95,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 64
+                            IsThumbnail = true,
+                            ProductId = 95
                         },
                         new
                         {
                             ProductImageId = 96,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 35
+                            IsThumbnail = true,
+                            ProductId = 96
                         },
                         new
                         {
                             ProductImageId = 97,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 57
+                            IsThumbnail = true,
+                            ProductId = 97
                         },
                         new
                         {
                             ProductImageId = 98,
                             ImageUrl = "https://via.placeholder.com/150",
                             IsThumbnail = true,
-                            ProductId = 25
+                            ProductId = 98
                         },
                         new
                         {
                             ProductImageId = 99,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 4
+                            IsThumbnail = true,
+                            ProductId = 99
                         },
                         new
                         {
                             ProductImageId = 100,
                             ImageUrl = "https://via.placeholder.com/150",
-                            IsThumbnail = false,
-                            ProductId = 83
+                            IsThumbnail = true,
+                            ProductId = 100
                         });
                 });
 
