@@ -21,8 +21,12 @@ namespace SportsStorenew.Service
 
         public GetProductsReasponse GetProducts(GetProductsRequest request)
         {
-            var result = _dbContext.Products.
-                Where(p => p.Category.Name == request.CategoryName || request.CategoryName == null).
+            var filterProducts = _dbContext.Products.
+                Where(p => p.Category.Name == request.CategoryName || request.CategoryName == null);
+            var totalCount = filterProducts.Count();
+            var result = filterProducts.
+                Skip(request.PageSize * (request.Page - 1)).
+                Take(request.PageSize).
                 Select(p => new GetProductsReasponse.Product
                 {
                     Name = p.Name,
@@ -33,7 +37,10 @@ namespace SportsStorenew.Service
                 });
             return new GetProductsReasponse
             {
-                Products = result.ToList()
+                Products = result.ToList(),
+                PageSize = request.PageSize,
+                Page = request.Page,
+                TotalCount = totalCount
             };
         }
     }

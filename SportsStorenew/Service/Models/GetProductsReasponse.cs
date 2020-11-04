@@ -8,6 +8,9 @@ namespace SportsStorenew.Service.Models
     public class GetProductsReasponse
     {
         public IEnumerable<Product> Products { get;  set; }
+        public int PageSize { get;  set; }
+        public int Page { get;  set; }
+        public int TotalCount { get;  set; }
 
         public class Product
         {
@@ -15,6 +18,7 @@ namespace SportsStorenew.Service.Models
             public string Name { get; set; }
             public decimal Price { get; set; }
             public string  ThumbnailUrl { get; set; }
+
         }
     }
 }

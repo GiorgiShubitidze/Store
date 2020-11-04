@@ -18,12 +18,14 @@ namespace SportsStorenew.Controllers
             _browsingAppService = browsingAppService;
         }
         // GET: HomeController
-        public IActionResult Index(string categoryName)
+        public IActionResult Index(string categoryName, int page=1)
         {
             var products = _browsingAppService.GetProducts(new
                 Service.Models.GetProductsRequest
             {
-                CategoryName = categoryName
+                CategoryName = categoryName ,
+                PageSize = 8,
+                Page =page
             });
 
             return View(products);
