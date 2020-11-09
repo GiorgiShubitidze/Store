@@ -11,5 +11,5 @@ namespace SportsStorenew.Service
         public GetCategoriesResponse GetCategories(GetCategoriesRequest request);
         public GetProductsReasponse GetProducts(GetProductsRequest request);
     }
-    
+
 }

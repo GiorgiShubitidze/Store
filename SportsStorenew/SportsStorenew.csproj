@@ -26,15 +26,30 @@
     <Compile Remove="Migrations\20201102055300_HasDataProductImagesNew.Designer.cs" />
     <Compile Remove="Migrations\20201102061255_HasDataNewImage.cs" />
     <Compile Remove="Migrations\20201102061255_HasDataNewImage.Designer.cs" />
+    <Compile Remove="Migrations\20201108143811_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108143811_AddToCart.Designer.cs" />
+    <Compile Remove="Migrations\20201108143948_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108143948_AddToCart.Designer.cs" />
+    <Compile Remove="Migrations\20201108144109_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108144109_AddToCart.Designer.cs" />
+    <Compile Remove="Migrations\20201108144301_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108144301_AddToCart.Designer.cs" />
+    <Compile Remove="Migrations\20201108144444_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108144444_AddToCart.Designer.cs" />
+    <Compile Remove="Migrations\20201108144554_AddToCart.cs" />
+    <Compile Remove="Migrations\20201108144554_AddToCart.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.5.3" />
+    <PackageReference Include="glyphicon" Version="1.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.9">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
   </ItemGroup>
 
 </Project>

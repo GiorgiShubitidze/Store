@@ -13,5 +13,6 @@ namespace SportsStorenew.Domain
         public Category Category { get; set; }
         public decimal Price { get; internal set; }
         public ICollection<ProductImage> Images { get; set; }
+        public string Description { get; set; }
     }
 }

@@ -33,14 +33,16 @@ namespace SportsStorenew.Service
                     ProductId =p.ProductId,
                     Price = p.Price,
                     ThumbnailUrl=p.Images.SingleOrDefault(i=>i.IsThumbnail).ImageUrl
-
+                    
                 });
             return new GetProductsReasponse
             {
                 Products = result.ToList(),
                 PageSize = request.PageSize,
                 Page = request.Page,
-                TotalCount = totalCount
+                TotalCount = totalCount,
+                ProductDescription = request.Description
+
             };
         }
     }
