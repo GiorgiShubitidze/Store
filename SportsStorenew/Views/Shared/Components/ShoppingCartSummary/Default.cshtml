@@ -1,12 +1,10 @@
 ﻿@model SportsStorenew.ViewModels.ShoppingCartViewModel
 
 
+<a class="nav-link text-dark" asp-area="" asp-controller="ShoppingCart" asp-action="AddToCarts">
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    <span id="cart-status">
+        @Model.ShoppingCartTotal
+    </span>
+</a>
 
-    <li>
-        <a>
-            <span class="glyphicon glyphicon-shopping-cart"></span>
-            <span id="cart-status">
-                @Model.ShoppingCartTotal
-            </span>
-        </a>
-    </li>

@@ -5,85 +5,91 @@
 
 
 
+<body style="background:whitesmoke">
 
 
 
-
-<div style="background-color:whitesmoke;margin:70px">
-
+    <div style="margin:70px">
 
 
+        @*///
 
-    @*@foreach (var item in Model.Products)
-        {
-            // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
-            <div class="card col-3 mb-3 p-1">
-                <a href="@Url.Action("Details", new { Id = item.ProductId })">
-                    <img class="card-img-top" src="@item.ThumbnailUrl " alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">  @Html.ActionLink(@item.Name, "Details", new { Id = item.ProductId }) </h5>
-                        <p class="card-text">Price : @item.Price</p>
-                    </div>
-                </a>
-            </div>
-        }*@
-    <div class="container">
-        <h3 class="h3">shopping Demo-8 </h3>
-        <div class="row">
-            <div class="col-md-3 col-sm-6">
-                <div class="product-grid6">
+        @foreach (var item in Model.Products)
+            {
+                // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
+                <div class="card col-3 mb-3 p-1">
+                    <a href="@Url.Action("Details", new { Id = item.ProductId })">
+                        <img class="card-img-top" src="@item.ThumbnailUrl " alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">  @Html.ActionLink(@item.Name, "Details", new { Id = item.ProductId }) </h5>
+                            <p class="card-text">Price : @item.Price</p>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        \\*@
+        <div class="container">
+
+            <div class="row">
+                <div class=" column size  mb-3 p-1  ">
+
 
                     @foreach (var item in Model.Products)
                     {
+                    <div class="product-grid6 ">
 
 
 
                         <div class="product-image6">
-                            <a href="#">
-                                <img class="pic-1" src="@item.ThumbnailUrl">
+                            <a href="@Url.Action("Details", new { Id = item.ProductId })">
+                                <img class="pic-1 card-img " src="@item.ThumbnailUrl">
                             </a>
                         </div>
-                        <div class="product-content">
-                            <h3 class="title"><a href="#">Men's Shirt</a></h3>
-                            <div class="price">
-                                $@item.Price
-                                <span>$40</span>
+                        <a href="@Url.Action("Details", new { Id = item.ProductId })">
+                            <div class="product-content ">
+                                <h3 class="title"><a href="#">@item.Name</a></h3>
+                                <div class="price">
+                                    $@item.Price
+                                    <span>$40</span>
+                                </div>
                             </div>
-                        </div>
-                        <ul class="social">
-                            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
+                        </a>
+                        @*<ul class="social">
+            <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
+            <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
+            <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
 
-                        </ul>
+        </ul>*@
 
                         @*<form asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-ProductId="">
-                <input  type="hidden" name ="ProductId" value="@item.ProductId" />
-                <button type ="submit">
-                    Add To Cart
-                </button>
+            <input  type="hidden" name ="ProductId" value="@item.ProductId" />
+            <button type ="submit">
+                Add To Cart
+            </button>
 
-            </form>*@
+        </form>*@
                         <p class="button">
                             <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
-                               asp-route-ProductId="@item.ProductId">Add to cart</a>
+                               asp-route-ProductId="@item.ProductId" asp-route-CategoryId="@item.CategoryId">Add to cart</a>
                         </p>
+                    </div>
 
-                    }
+                            }
 
-                </div>
+                       
+                    </div>
+
             </div>
-
         </div>
+        <hr>
+
+
+
+
     </div>
-    <hr>
 
-
-
-
-</div>
-
-
+</body>
 
 
 
@@ -111,6 +117,8 @@
     {
         Next = Count;
     }
+    
+
 
 
 }
@@ -163,10 +171,10 @@
 .product-grid6{font-family:'Open Sans',sans-serif;text-align:center;position:relative;transition:all .5s ease 0s}
 .product-grid6:hover{box-shadow:0 0 10px rgba(0,0,0,.3)}
 .product-grid6 .product-image6 a{display:block}
-.product-grid6 .product-image6 img{width:100%;height:auto;transition:all .5s ease 0s}
+.product-grid6 .product-image6 img{width:240px;height:160px;transition:all .5s ease 0s}
 .product-grid6:hover .product-image6 img{transform:scale(1.1)}
 .product-grid6 .product-content{padding:12px 12px 15px;transition:all .5s ease 0s}
-.product-grid6:hover .product-content{opacity:0}
+.product-grid6:hover  .product-content{opacity:0}
 .product-grid6 .title{font-size:20px;font-weight:600;text-transform:capitalize;margin:0 0 10px;transition:all .3s ease 0s}
 .product-grid6 .title a{color:#000}
 .product-grid6 .title a:hover{color:#2e86de}
@@ -180,5 +188,9 @@
 .product-grid6 .social li a:after,.product-grid6 .social li a:before{content:attr(data-tip);color:#fff;background-color:#2e86de;font-size:12px;letter-spacing:1px;line-height:20px;padding:1px 5px;border-radius:5px;white-space:nowrap;opacity:0;transform:translateX(-50%);position:absolute;left:50%;top:-30px}
 .product-grid6 .social li a:after{content:'';height:15px;width:15px;border-radius:0;transform:translateX(-50%) rotate(45deg);top:-20px;z-index:-1}
 .product-grid6 .social li a:hover:after,.product-grid6 .social li a:hover:before{opacity:1}
-
+    .column {
+        column-count: 4;
+        
+    }
+  
 </style>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SportsStorenew.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,7 @@ namespace SportsStorenew.Domain.DB
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<AddToCart> AddToCarts { get; set; }
+        public DbSet<CheckoutViewModel> CheckoutViewModels { get; set; }
        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

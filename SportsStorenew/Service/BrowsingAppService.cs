@@ -32,8 +32,9 @@ namespace SportsStorenew.Service
                     Name = p.Name,
                     ProductId =p.ProductId,
                     Price = p.Price,
-                    ThumbnailUrl=p.Images.SingleOrDefault(i=>i.IsThumbnail).ImageUrl
-                    
+                    ThumbnailUrl=p.Images.SingleOrDefault(i=>i.IsThumbnail).ImageUrl,
+                    CategoryId=p.CategoryId
+
                 });
             return new GetProductsReasponse
             {
