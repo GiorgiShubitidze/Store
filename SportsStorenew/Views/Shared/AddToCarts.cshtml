@@ -2,10 +2,12 @@
 
 
 @{ decimal totalCost = 0;
+    int Count = 0;
 }
 @foreach (var item in Model)
 {
     totalCost += item.TotalCostForCart;
+    Count++;
 }
 
 <!--Section: Block Content-->
@@ -21,7 +23,7 @@
             <div class="mb-3">
                 <div class="pt-4 wish-list">
 
-                    <h5 class="mb-4">Cart (<span>2</span> items)</h5>
+                    <h5 class="mb-4">Cart (<span>@Count</span> items)</h5>
                     <hr class="mb-4">
                     @foreach (var item in Model)
                     {
