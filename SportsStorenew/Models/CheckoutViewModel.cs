@@ -10,13 +10,15 @@ namespace SportsStorenew.Models
     public class CheckoutViewModel
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "First Name is required")]
-        [DisplayName("First Name")]
-        [StringLength(160)]
-        public string  Name { get; set; }
 
-        [Required(ErrorMessage = "Last Name is required")]
-        [DisplayName("Last Name")]
+
+        [Required(ErrorMessage = "Name is required")]
+        //[DisplayName("First Name")]
+        [StringLength(160)]
+        public string Name { get; set; }
+
+        [Required(ErrorMessage = "Surname is required")]
+        //[DisplayName("Last Name")]
         [StringLength(160)]
         public string Surname { get; set; }
 
@@ -26,9 +28,12 @@ namespace SportsStorenew.Models
         [DataType(DataType.EmailAddress)]
         [EmailAddress]
         public string Email { get; set; }
+
         [Required(ErrorMessage = "Address is required")]
         [StringLength(70)]
         public string Address { get; set; }
+
+        [StringLength(400)]
         public string Note { get; set; }
 
 
