@@ -20,14 +20,18 @@ namespace SportsStorenew.Controllers
             _browsingAppService = browsingAppService;
         }
         // GET: HomeController
-        public IActionResult Index(string categoryName, int page=1)
+        public IActionResult Index(string categoryName, string productName, int page=1)
         {
+
+
             var products = _browsingAppService.GetProducts(new
                 Service.Models.GetProductsRequest
             {
                 CategoryName = categoryName ,
                 PageSize = 8,
-                Page =page
+                Page =page,
+                Name = productName
+                
             });
 
             return View(products);
@@ -42,9 +46,6 @@ namespace SportsStorenew.Controllers
                 Db.AddToCarts.Add(Cart);
                 Db.SaveChanges();
             }
-
-
-
                 return View();
         }
         public IActionResult Details(int Id)

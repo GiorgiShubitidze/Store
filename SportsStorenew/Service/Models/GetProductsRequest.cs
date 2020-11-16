@@ -10,6 +10,7 @@ namespace SportsStorenew.Service.Models
         public int PageSize { get; set; }
         public int Page { get; set; }
         public string CategoryName { get;  set; }
-        public string Description { get; internal set; }
+        public string Description { get;  set; }
+        public string Name { get;  set; }
     }
 }

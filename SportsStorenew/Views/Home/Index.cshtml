@@ -5,6 +5,7 @@
 
 
 @{
+
     int Count = 1;
     if (Model.TotalCount % Model.PageSize == 0)
     {
@@ -73,18 +74,20 @@
 
                             <div class="product-image6">
                                 <a href="@Url.Action("Details", new { Id = item.ProductId })">
-                                    <img class="pic-1 card-img " src="@item.ThumbnailUrl">
+                                    <img  src="@item.ThumbnailUrl">
                                 </a>
                             </div>
-                            <a href="@Url.Action("Details", new { Id = item.ProductId })">
-                                <div class="product-content ">
-                                    <h3 class="title"><a href="#">@item.Name</a></h3>
-                                    <div class="price">
-                                        $@item.Price
-                                        <span>$40</span>
-                                    </div>
+                            
+                                <div class=" ">
+                                    <a href="@Url.Action("Details", new { Id = item.ProductId })"style="text-decoration:none">
+                                        <h3 class="title">@item.Name</h3>
+                                        <div class="price">
+                                            $@item.Price
+                                            <span>$40</span>
+                                        </div>
+                                    </a>
                                 </div>
-                            </a>
+                            
                             @*<ul class="social">
                                     <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
                                     <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
@@ -99,8 +102,9 @@
                                     </button>
 
                                 </form>*@
+
                             <p class="button">
-                                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                                <a class="btn btn-primary product-content BtnColor " asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
                                    asp-route-ProductId="@item.ProductId" asp-route-CategoryId="@item.CategoryId">Add to cart</a>
                             </p>
                         </div>
@@ -123,13 +127,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination  d-flex justify-content-md-start">
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back"><<</a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back" asp-route-productName="@Model.CategoryName"><<</a></li>
                 @for (int i = 1; i <= Count; i++)
                 {
-                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i">@i</a></li>
+                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-productName="@Model.CategoryName">@i</a></li>
                 }
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next">>></a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-productName="@Model.CategoryName">>></a></li>
 
             </ul>
         </nav>
@@ -198,12 +202,17 @@
         }
 
         .product-grid6 .product-content {
-            padding: 12px 12px 15px;
-            transition: all .5s ease 0s
+            
+            transition: all .5s ease 0s;
+            opacity: 0.09;
+            
+           
+
         }
 
         .product-grid6:hover .product-content {
-            opacity: 0
+            opacity:1;
+            
         }
 
         .product-grid6 .title {
@@ -211,7 +220,8 @@
             font-weight: 600;
             text-transform: capitalize;
             margin: 0 0 10px;
-            transition: all .3s ease 0s
+            transition: all .3s ease 0s;
+            color: black;
         }
 
             .product-grid6 .title a {
@@ -225,7 +235,13 @@
         .product-grid6 .price {
             font-size: 18px;
             font-weight: 600;
-            color: #2e86de
+            color: black;
+        }
+        .BtnColor{
+            
+            background-color:black;
+            border-color:black;
+            
         }
 
             .product-grid6 .price span {
@@ -235,6 +251,7 @@
                 text-decoration: line-through;
                 margin-left: 7px;
                 display: inline-block
+                    
             }
 
         .product-grid6 .social {

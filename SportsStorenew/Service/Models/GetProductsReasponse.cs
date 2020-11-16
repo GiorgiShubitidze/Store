@@ -12,7 +12,7 @@ namespace SportsStorenew.Service.Models
         public int Page { get;  set; }
         public int TotalCount { get;  set; }
         public string ProductDescription { get; set; }
-     
+        public string CategoryName { get;  set; }
 
         public class Product
         {

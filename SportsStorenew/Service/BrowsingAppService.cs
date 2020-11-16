@@ -14,15 +14,24 @@ namespace SportsStorenew.Service
         {
             this._dbContext = dbcontext;
         }
+
+
         public GetCategoriesResponse GetCategories(GetCategoriesRequest request)
         {
             throw new NotImplementedException();
         }
 
+
         public GetProductsReasponse GetProducts(GetProductsRequest request)
         {
+
+           
+
             var filterProducts = _dbContext.Products.
-                Where(p => p.Category.Name == request.CategoryName || request.CategoryName == null);
+                Where(p => (p.Category.Name == request.CategoryName || request.CategoryName == null) &&
+                (p.Name.Contains(request.Name) || request.Name==null)); 
+                
+                
             var totalCount = filterProducts.Count();
             var result = filterProducts.
                 Skip(request.PageSize * (request.Page - 1)).
@@ -42,7 +51,8 @@ namespace SportsStorenew.Service
                 PageSize = request.PageSize,
                 Page = request.Page,
                 TotalCount = totalCount,
-                ProductDescription = request.Description
+                ProductDescription = request.Description,
+                CategoryName = request.Name
 
             };
         }
