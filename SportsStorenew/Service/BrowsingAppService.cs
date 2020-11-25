@@ -1,11 +1,11 @@
-﻿using SportsStorenew.Domain.DB;
-using SportsStorenew.Service.Models;
+﻿using SportsStoreNew.Domain.DB;
+using SportsStoreNew.Service.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SportsStorenew.Service
+namespace SportsStoreNew.Service
 {
     public class BrowsingAppService : IBrowsingAppService
     {

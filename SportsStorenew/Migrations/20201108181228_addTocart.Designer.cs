@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using SportsStorenew.Domain.DB;
+using SportsStoreNew.Domain.DB;
 
-namespace SportsStorenew.Migrations
+namespace SportsStoreNew.Migrations
 {
     [DbContext(typeof(SportsStoreDbContext))]
     [Migration("20201108181228_addTocart")]
@@ -21,7 +21,7 @@ namespace SportsStorenew.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("SportsStorenew.Domain.AddToCart", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.AddToCart", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -39,7 +39,7 @@ namespace SportsStorenew.Migrations
                     b.ToTable("AddToCarts");
                 });
 
-            modelBuilder.Entity("SportsStorenew.Domain.Category", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -54,7 +54,7 @@ namespace SportsStorenew.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("SportsStorenew.Domain.Product", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
@@ -80,7 +80,7 @@ namespace SportsStorenew.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("SportsStorenew.Domain.ProductImage", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.ProductImage", b =>
                 {
                     b.Property<int>("ProductImageId")
                         .ValueGeneratedOnAdd()
@@ -103,18 +103,18 @@ namespace SportsStorenew.Migrations
                     b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("SportsStorenew.Domain.Product", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.Product", b =>
                 {
-                    b.HasOne("SportsStorenew.Domain.Category", "Category")
+                    b.HasOne("SportsStoreNew.Domain.Category", "Category")
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SportsStorenew.Domain.ProductImage", b =>
+            modelBuilder.Entity("SportsStoreNew.Domain.ProductImage", b =>
                 {
-                    b.HasOne("SportsStorenew.Domain.Product", "Product")
+                    b.HasOne("SportsStoreNew.Domain.Product", "Product")
                         .WithMany("Images")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)

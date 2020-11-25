@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace SportsStorenew.Migrations
+namespace SportsStoreNew.Migrations
 {
     public partial class AddCheckout : Migration
     {

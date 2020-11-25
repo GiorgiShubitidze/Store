@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SportsStorenew.Domain;
-using SportsStorenew.Domain.DB;
-using SportsStorenew.Models;
 using SportsStorenew.Service;
+using SportsStoreNew.Domain;
+using SportsStoreNew.Domain.DB;
+using SportsStoreNew.Models;
+using SportsStoreNew.Service;
 
-namespace SportsStorenew.Controllers
+namespace SportsStoreNew.Controllers
 {
-
     public class ShoppingCartController : Controller
     {
 
@@ -30,12 +31,29 @@ namespace SportsStorenew.Controllers
 
         public IActionResult AddToShoppingCart(int ProductId, int CategoryId)
         {
-            var Cart = new AddToCart { DateTime = localDate, CartsProductId = ProductId };
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userName = User.Identity.Name;
+            var Category = _databaseContext.Categories.Where(a => a.CategoryId == CategoryId).Select(a => a.Name).FirstOrDefault();
+            if (userId == null)
+            {
+                return RedirectToAction("Index", "Home", new { categoryName = Category });
+            }
+            var Cart = new AddToCart { DateTime = localDate, UserId=userId ,UserName=userName ,ProductId= ProductId };
             _databaseContext.AddToCarts.Add(Cart);
             _databaseContext.SaveChanges();
-            var Category = _databaseContext.Categories.Where(a => a.CategoryId == CategoryId).Select(a => a.Name).FirstOrDefault();
             return RedirectToAction("Index", "Home", new { categoryName = Category });
         }
+        public IActionResult ProductCountForUser()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var count = -_databaseContext.AddToCarts.Where(a => a.UserId == userId).Count();
+            var productCount = new ProductCount();
+            productCount.Count = count;
+            return View(productCount);
+        }
+
+
         [HttpGet]
         public IActionResult Checkout()
         {
@@ -46,7 +64,7 @@ namespace SportsStorenew.Controllers
         {
             if (ModelState.IsValid)
             {
-
+                
                 var Chackout = new CheckoutViewModel();
                 Chackout.Address = model.Address;
                 Chackout.Email = model.Email;
@@ -61,7 +79,7 @@ namespace SportsStorenew.Controllers
 
             return View();
 
-            
+
         }
         public IActionResult SuccessCheck()
         {
@@ -73,8 +91,9 @@ namespace SportsStorenew.Controllers
 
         public IActionResult RemoveToShoppingCart(int ProductIdForCart)
         {
-            var x = _databaseContext.AddToCarts.Where(a => a.CartsProductId == ProductIdForCart).Select(a => a.Id).FirstOrDefault();
-            var count = _databaseContext.AddToCarts.Where(a => a.CartsProductId > 0).Count();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var x = _databaseContext.AddToCarts.Where(a => a.ProductId == ProductIdForCart).Select(a => a.Id).FirstOrDefault();
+            var count = _databaseContext.AddToCarts.Where(a => a.UserId==userId).Count();
             var y = _databaseContext.AddToCarts.Find(x);
             _databaseContext.AddToCarts.Remove(y);
             _databaseContext.SaveChanges();
@@ -91,18 +110,24 @@ namespace SportsStorenew.Controllers
             using (var Db = new SportsStoreDbContext())
             {
                 var shoppingCart = new List<ShoppingCart>();
-
+                
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 foreach (var cart in Db.AddToCarts.ToList())
                 {
-                    var _shoppingCart = new ShoppingCart();
-                    _shoppingCart.TotalCostForCart = Db.Products.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.Price).FirstOrDefault();
-                    _shoppingCart.NameForCart = Db.Products.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.Name).FirstOrDefault();
-                    _shoppingCart.DescriptionForCart = Db.Products.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.Description).FirstOrDefault();
-                    _shoppingCart.ImageUrlForCart = Db.ProductImages.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.ImageUrl).FirstOrDefault();
-                    _shoppingCart.ProductIdForCart = Db.ProductImages.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.ProductId).FirstOrDefault();
-                    _shoppingCart.Name = Db.Products.Where(a => a.ProductId == cart.CartsProductId).Select(a => a.Name).FirstOrDefault();
-                    shoppingCart.Add(_shoppingCart);
+                    if (userId==cart.UserId)
+                    {
+                        var _shoppingCart = new ShoppingCart();
+                        _shoppingCart.TotalCostForCart = Db.Products.Where(a => a.ProductId == cart.ProductId).Select(a => a.Price).FirstOrDefault();
+                        _shoppingCart.NameForCart = Db.Products.Where(a => a.ProductId == cart.ProductId).Select(a => a.Name).FirstOrDefault();
+                        _shoppingCart.DescriptionForCart = Db.Products.Where(a => a.ProductId == cart.ProductId).Select(a => a.Description).FirstOrDefault();
+                        _shoppingCart.ImageUrlForCart = Db.ProductImages.Where(a => a.ProductId == cart.ProductId).Select(a => a.ImageUrl).FirstOrDefault();
+                        _shoppingCart.ProductIdForCart = Db.ProductImages.Where(a => a.ProductId == cart.ProductId).Select(a => a.ProductId).FirstOrDefault();
+                        _shoppingCart.Name = Db.Products.Where(a => a.ProductId == cart.ProductId).Select(a => a.Name).FirstOrDefault();
+                        shoppingCart.Add(_shoppingCart);
+                    }
+                    
                 }
+               
 
                 return View(shoppingCart);
             }

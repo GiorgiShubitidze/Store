@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SportsStorenew.Models
+namespace SportsStoreNew.Models
 {
     public class CheckoutViewModel
     {

@@ -3,15 +3,17 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
-using SportsStorenew.Domain;
-using SportsStorenew.Domain.DB;
-using SportsStorenew.Service;
+using SportsStoreNew.Domain;
+using SportsStoreNew.Domain.DB;
+using SportsStoreNew.Service;
 
-namespace SportsStorenew.Controllers
+namespace SportsStoreNew.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         IBrowsingAppService _browsingAppService;
@@ -20,29 +22,30 @@ namespace SportsStorenew.Controllers
             _browsingAppService = browsingAppService;
         }
         // GET: HomeController
-        public IActionResult Index(string categoryName, string productName, int page=1)
+        [AllowAnonymous]
+        public IActionResult Index(string categoryName, string productName, int page = 1)
         {
 
 
             var products = _browsingAppService.GetProducts(new
                 Service.Models.GetProductsRequest
             {
-                CategoryName = categoryName ,
+                CategoryName = categoryName,
                 PageSize = 8,
-                Page =page,
+                Page = page,
                 Name = productName
-                
+
             });
 
             return View(products);
         }
-       
+
         public IActionResult AddToCart(int  ProductId)
         {
             DateTime localDate = DateTime.Now;
             using (var Db = new SportsStoreDbContext())
             {
-                var Cart = new AddToCart {  DateTime = localDate, CartsProductId = ProductId };
+                var Cart = new AddToCart {  DateTime = localDate, ProductId = ProductId };
                 Db.AddToCarts.Add(Cart);
                 Db.SaveChanges();
             }

@@ -1,6 +1,9 @@
-﻿namespace SportsStorenew.Service.Models
+﻿namespace SportsStoreNew.Service.Models
 {
     public class GetProductAddToCart
     {
+
+
+
     }
 }

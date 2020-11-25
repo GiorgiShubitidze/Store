@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SportsStorenew.Service
+namespace SportsStoreNew.Service
 {
     public class ShoppingCart
     {
@@ -14,5 +14,6 @@ namespace SportsStorenew.Service
         public string ImageUrlForCart { get; set; }
         public int ProductIdForCart { get;  set; }
         public string Name { get; set; }
+        public int CountForCart { get;  set; }
     }
 }

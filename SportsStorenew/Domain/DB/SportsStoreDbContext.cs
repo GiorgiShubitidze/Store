@@ -1,31 +1,33 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SportsStorenew.Models;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using SportsStoreNew.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SportsStorenew.Domain.DB
+namespace SportsStoreNew.Domain.DB
 {
-    public class SportsStoreDbContext : DbContext
+    public class SportsStoreDbContext : IdentityDbContext
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
         public DbSet<AddToCart> AddToCarts { get; set; }
         public DbSet<CheckoutViewModel> CheckoutViewModels { get; set; }
-       
+
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=.;database=Test2;Trusted_Connection=True;integrated security=True;");
-           
-        }
+            optionsBuilder.UseSqlServer("server=aVTEST1;uid=AveTestLogin;database=Test2;password=Aversi2;Trusted_Connection=True;integrated security=False;");
 
+        }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
+            base.OnModelCreating(modelBuilder);
             //Random rnd = new Random();
             //for (int i = 1; i <= 100; i++)
             //{
