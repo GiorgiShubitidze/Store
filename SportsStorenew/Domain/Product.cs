@@ -14,5 +14,6 @@ namespace SportsStoreNew.Domain
         public decimal Price { get; internal set; }
         public ICollection<ProductImage> Images { get; set; }
         public string Description { get; set; }
+        public int DiscountPrice { get; set; }
     }
 }

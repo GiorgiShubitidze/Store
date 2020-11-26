@@ -11,9 +11,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SportsStorenew.Service;
 using SportsStoreNew.Areas.Identity.Pages;
 using SportsStoreNew.Domain.DB;
 using SportsStoreNew.Service;
+using SportsStoreNew.Service.Models;
 
 namespace SportsStoreNew
 {
@@ -34,8 +36,6 @@ namespace SportsStoreNew
                 options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 //options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
                 //options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-
-
             })
                 .AddCookie(options =>
                 {
@@ -43,15 +43,14 @@ namespace SportsStoreNew
                 })
                  .AddGoogle(options =>
                 {
-
                     options.ClientId = "285283984906-mnue7vn8auq7jat33epco7i48gmvg67i.apps.googleusercontent.com";
                     options.ClientSecret = "N4ZsVHK_rhhj5QyTnLZfJVGp";
-
                 });
-
 
             services.AddControllersWithViews();
             services.AddScoped<IBrowsingAppService, BrowsingAppService>();
+            services.AddScoped<ICartItems, CartItems>();
+            services.AddScoped<ICheckDataService, CheckDataService>();
             services.AddDbContext<SportsStoreDbContext>();
             services.AddRazorPages();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)

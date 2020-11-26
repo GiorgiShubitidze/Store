@@ -13,6 +13,7 @@ namespace SportsStoreNew.Service.Models
         public int TotalCount { get;  set; }
         public string ProductDescription { get; set; }
         public string CategoryName { get;  set; }
+        public string ProductName { get; set; }
 
         public class Product
         {
@@ -21,7 +22,7 @@ namespace SportsStoreNew.Service.Models
             public decimal Price { get; set; }
             public string  ThumbnailUrl { get; set; }
             public int CategoryId { get; set; }
-
+            public int DiscountPrice { get;  set; }
         }
     }
 }

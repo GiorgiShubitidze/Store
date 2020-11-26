@@ -1,5 +1,5 @@
 ﻿@{
-    @model ICollection<SportsStoreNew.Domain.ProductDetails>
+    @model SportsStoreNew.Service.Models.GetProductDetails
 
 }
 <style>
@@ -36,30 +36,20 @@
     <body style="background-color:whitesmoke">
         <div class="row">
             <div class="left">
-                @{int i = 1; }
-                @foreach (var item in Model)
-                {
-                    // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
+                
+                    @*// @Html.ActionLink("Details", "Details", new { Id = item.ProductId })*@
                     <div class="card  display-inline">
-                        <img class="card-img-top" src="@item.DetailsImageUrl " alt="Card image cap">
+                        <img class="card-img-top" src="@Model.DetailsImageUrl " alt="Card image cap">
                     </div>
-                }
+                
             </div>
             <div class="right">
-
-                @foreach (var item in Model)
-                {
-
-                    if (i == 2)
-                    {
+ 
                         <div class="card-body">
-                            <h5 class="card-title">  @item.Description </h5>
-                            <p class="card-text" style="color:red">Price : @item.ProductPrice</p>
+                            <h5 class="card-title">  @Model.Description </h5>
+                            <p class="card-text" style="color:red">Price : @Model.ProductPrice</p>
                         </div>
-                    }
-                    else i++;
-
-                }
+                
             </div>
 
         </div>

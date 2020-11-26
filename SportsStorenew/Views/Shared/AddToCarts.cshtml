@@ -1,13 +1,15 @@
-﻿@model ICollection<SportsStoreNew.Service.ShoppingCart>
-
+﻿@model SportsStoreNew.Service.Models.GetProductAddToCart
 
 @{ decimal totalCost = 0;
     int Count = 0;
 }
-@foreach (var item in Model)
+@foreach (var item in Model.Product)
 {
     totalCost += item.TotalCostForCart;
     Count++;
+   
+    
+    
 }
 
 <!--Section: Block Content-->
@@ -25,7 +27,7 @@
 
                     <h5 class="mb-4">Cart (<span>@Count</span> items)</h5>
                     <hr class="mb-4">
-                    @foreach (var item in Model)
+                    @foreach (var item in Model.Product)
                     {
 
 

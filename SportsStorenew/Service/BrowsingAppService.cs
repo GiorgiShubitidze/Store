@@ -14,23 +14,25 @@ namespace SportsStoreNew.Service
         {
             this._dbContext = dbcontext;
         }
-
-
         public GetCategoriesResponse GetCategories(GetCategoriesRequest request)
         {
             throw new NotImplementedException();
         }
-
-
+        public GetProductDetails GetProduct(int Id)
+        {
+            return new GetProductDetails
+            {
+                ProductName = _dbContext.Products.Where(a => a.ProductId == Id).Select(a => a.Name).FirstOrDefault(),
+                Description = _dbContext.Products.Where(a => a.ProductId == Id).Select(a => a.Description).FirstOrDefault(),
+                ProductPrice = _dbContext.Products.Where(a => a.ProductId == Id).Select(a => a.Price).FirstOrDefault(),
+                DetailsImageUrl = _dbContext.ProductImages.Where(a => a.ProductId == Id).Select(a => a.ImageUrl).FirstOrDefault()
+            };
+        }
         public GetProductsReasponse GetProducts(GetProductsRequest request)
         {
-
-           
-
             var filterProducts = _dbContext.Products.
                 Where(p => (p.Category.Name == request.CategoryName || request.CategoryName == null) &&
                 (p.Name.Contains(request.Name) || request.Name==null)); 
-                
                 
             var totalCount = filterProducts.Count();
             var result = filterProducts.
@@ -42,8 +44,9 @@ namespace SportsStoreNew.Service
                     ProductId =p.ProductId,
                     Price = p.Price,
                     ThumbnailUrl=p.Images.SingleOrDefault(i=>i.IsThumbnail).ImageUrl,
-                    CategoryId=p.CategoryId
-
+                    CategoryId=p.CategoryId,
+                    DiscountPrice = p.DiscountPrice
+                    
                 });
             return new GetProductsReasponse
             {
@@ -52,7 +55,9 @@ namespace SportsStoreNew.Service
                 Page = request.Page,
                 TotalCount = totalCount,
                 ProductDescription = request.Description,
-                CategoryName = request.Name
+                CategoryName = request.CategoryName,
+                ProductName = request.Name
+
 
             };
         }

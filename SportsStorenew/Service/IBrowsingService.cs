@@ -10,6 +10,7 @@ namespace SportsStoreNew.Service
     {
         public GetCategoriesResponse GetCategories(GetCategoriesRequest request);
         public GetProductsReasponse GetProducts(GetProductsRequest request);
+        public GetProductDetails GetProduct(int Id);
     }
 
 }

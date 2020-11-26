@@ -2,12 +2,6 @@
     @model SportsStoreNew.Service.Models.GetProductsReasponse
 
 }
-@using Microsoft.AspNetCore.Identity
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
-
-
-
 
 @{
 
@@ -35,36 +29,11 @@
         Next = Count;
     }
 
-
-
 }
 
-
-
 <body style="background:whitesmoke">
-
-
-
     <div>
 
-
-        @*///
-
-            @foreach (var item in Model.Products)
-                {
-                    // @Html.ActionLink("Details", "Details", new { Id = item.ProductId })
-                    <div class="card col-3 mb-3 p-1">
-                        <a href="@Url.Action("Details", new { Id = item.ProductId })">
-                            <img class="card-img-top" src="@item.ThumbnailUrl " alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">  @Html.ActionLink(@item.Name, "Details", new { Id = item.ProductId }) </h5>
-                                <p class="card-text">Price : @item.Price</p>
-                            </div>
-                        </a>
-                    </div>
-                }
-
-            \\*@
         <div class="container">
 
             <div class="row">
@@ -88,7 +57,7 @@
                                     <h3 class="title">@item.Name</h3>
                                     <div class="price">
                                         $@item.Price
-                                        <span>$40</span>
+                                        <span>$@item.DiscountPrice</span>
                                     </div>
                                 </a>
                             </div>
@@ -123,32 +92,24 @@
         </div>
         <hr>
 
-
-
-
     </div>
 
     <footer>
         <nav aria-label="Page navigation example">
             <ul class="pagination  d-flex justify-content-md-start">
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back" asp-route-productName="@Model.CategoryName"><<</a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName"><<</a></li>
                 @for (int i = 1; i <= Count; i++)
                 {
-                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-productName="@Model.CategoryName">@i</a></li>
+                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName"asp-route-productName="@Model.ProductName">@i</a></li>
                 }
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-productName="@Model.CategoryName">>></a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName"asp-route-productName="@Model.ProductName">>></a></li>
 
             </ul>
         </nav>
     </footer>
 </body>
-
-
-
-
-
 
 
 
