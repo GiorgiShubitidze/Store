@@ -18,43 +18,17 @@ namespace SportsStoreNew.Controllers
     [Authorize]
     public class ShoppingCartController : Controller
     {
-
-        SportsStoreDbContext _databaseContext;
         ICheckDataService _ichekdataservice;
         ICartItems _cartItems;
-        public ShoppingCartController(SportsStoreDbContext Db, ICheckDataService ichekdataservice, ICartItems cartItems)
+        public ShoppingCartController( ICheckDataService ichekdataservice, ICartItems cartItems )
         {
             _ichekdataservice = ichekdataservice;
-            _databaseContext = Db;
             _cartItems = cartItems;
         }
         DateTime localDate = DateTime.Now;
         // private ShoppingCart _shoppingCart;
         //private ShoppingCart _shoppingCart;
-        public IActionResult AddToShoppingCart(int ProductId, int CategoryId)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var userName = User.Identity.Name;
-            var Category = _databaseContext.Categories.Where(a => a.CategoryId == CategoryId).Select(a => a.Name).FirstOrDefault();
-            if (userId == null)
-            {
-                return RedirectToAction("Index", "Home", new { categoryName = Category });
-            }
-            var Cart = new AddToCart { DateTime = localDate, UserId = userId, UserName = userName, ProductId = ProductId };
-            _databaseContext.AddToCarts.Add(Cart);
-            _databaseContext.SaveChanges();
-            return RedirectToAction("Index", "Home", new { categoryName = Category });
-        }
-        public IActionResult ProductCountForUser()
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var count = -_databaseContext.AddToCarts.Where(a => a.UserId == userId).Count();
-            var productCount = new ProductCount();
-            productCount.Count = count;
-            return View(productCount);
-        }
-
-
+        
         [HttpGet]
         public IActionResult Checkout()
         {
@@ -65,39 +39,42 @@ namespace SportsStoreNew.Controllers
         {
             if (ModelState.IsValid)
             {
-                var Chek = _ichekdataservice.Check(model);
-                if (Chek == true)
+                var Check = _ichekdataservice.Check(model);
+                if (Check == true)
                 {
                     return RedirectToAction("SuccessCheck", "ShoppingCart");
                 }
+                else return View();
             }
-
             return View();
         }
         public IActionResult SuccessCheck()
         {
             return View();
         }
-        public IActionResult RemoveToShoppingCart(int ProductIdForCart)
-        {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var x = _databaseContext.AddToCarts.Where(a => a.ProductId == ProductIdForCart).Select(a => a.Id).FirstOrDefault();
-            var count = _databaseContext.AddToCarts.Where(a => a.UserId == userId).Count();
-            var y = _databaseContext.AddToCarts.Find(x);
-            _databaseContext.AddToCarts.Remove(y);
-            _databaseContext.SaveChanges();
-
-            if (count == 1)
-            {
-                return RedirectToAction("Index", "Home");
-            }
-            return RedirectToAction("AddToCarts", "ShoppingCart");
-        }
-        public IActionResult AddToCarts()
+       
+        public IActionResult AddToCarts()  //CartItems
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var items = _cartItems.GetProducts(userId);
             return View(items);
+        }
+        public IActionResult AddToShoppingCart(int ProductId, int CategoryId)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var userName = User.Identity.Name;
+            var Add = _cartItems.Add(ProductId, CategoryId, userName, userId);//return Category 
+            return RedirectToAction("Index", "Home", new { categoryName = Add });
+        }
+        public IActionResult RemoveToShoppingCart(int ProductIdForCart)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var Remove = _cartItems.Remove(ProductIdForCart, userId);
+            if (Remove == true)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("AddToCarts", "ShoppingCart");
         }
     }
 }

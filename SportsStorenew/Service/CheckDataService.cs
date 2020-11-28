@@ -1,5 +1,4 @@
-﻿using SportsStorenew.Service.Models;
-using SportsStoreNew.Domain.DB;
+﻿using SportsStoreNew.Domain.DB;
 using SportsStoreNew.Models;
 using SportsStoreNew.Service.Models;
 using System;

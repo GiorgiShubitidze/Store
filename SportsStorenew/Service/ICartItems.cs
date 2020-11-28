@@ -1,5 +1,5 @@
-﻿using SportsStorenew.Service.Models;
-using SportsStoreNew.Service.Models;
+﻿using SportsStoreNew.Service.Models;
+using SportsStoreNew.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace SportsStoreNew.Service
 {
     public interface ICartItems
     {
-        //public GetCategoriesResponse GetCategories(GetCategoriesRequest request);
-        //public GetProductsReasponse GetProducts(GetProductsRequest request);
-        // public GetProductDetails GetProduct(int Id);
         public GetProductAddToCart GetProducts(string userId);
-
+        public string  Add(int ProductId, int CategoryId ,string userName,string userId);
+        public bool Remove(int ProductId,string userId);
+        public ShoppingCartViewModel Count(string userName);
+            
     }
 }
