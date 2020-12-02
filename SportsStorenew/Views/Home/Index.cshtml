@@ -36,16 +36,12 @@
 
         <div class="container">
 
-            <div class="row">
-                <div class=" column size  ">
+            <div class="row"style="min-height:550px">
 
-
-                    @foreach (var item in Model.Products)
-                    {
-                        <div class="product-grid6 ">
-
-
-
+                @foreach (var item in Model.Products)
+                {
+                    <div class="col-md-3 col-sm-6">
+                        <div class="product-grid6">
                             <div class="product-image6">
                                 <a href="@Url.Action("Details", new { Id = item.ProductId })">
                                     <img src="@item.ThumbnailUrl">
@@ -61,32 +57,14 @@
                                     </div>
                                 </a>
                             </div>
-
-                            @*<ul class="social">
-                                    <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="" data-tip="Add to Wishlist"><i class="fa fa-shopping-bag"></i></a></li>
-                                    <li><a href="" data-tip="Add to Cart"><i class="fa fa-shopping-cart"></i></a></li>
-
-                                </ul>*@
-
-                            @*<form asp-controller="ShoppingCart" asp-action="AddToShoppingCart" asp-route-ProductId="">
-                                    <input  type="hidden" name ="ProductId" value="@item.ProductId" />
-                                    <button type ="submit">
-                                        Add To Cart
-                                    </button>
-
-                                </form>*@
-
                             <p class="button">
                                 <a class="btn btn-primary product-content BtnColor " asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
                                    asp-route-ProductId="@item.ProductId" asp-route-CategoryId="@item.CategoryId ">Add to cart</a>
                             </p>
                         </div>
+                    </div>
 
-                    }
-
-
-                </div>
+                }
 
             </div>
         </div>
@@ -101,37 +79,15 @@
                 <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName"><<</a></li>
                 @for (int i = 1; i <= Count; i++)
                 {
-                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName"asp-route-productName="@Model.ProductName">@i</a></li>
+                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">@i</a></li>
                 }
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName"asp-route-productName="@Model.ProductName">>></a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">>></a></li>
 
             </ul>
         </nav>
     </footer>
 </body>
-
-
-
-@*<nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>*@
 
 
 
