@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -16,10 +17,12 @@ using SportsStoreNew.Service.Models;
 namespace SportsStoreNew.Controllers
 {
     [Authorize]
+   
     public class HomeController : Controller
     {
         IBrowsingAppService _browsingAppService;
-       
+        
+        
         public HomeController(IBrowsingAppService browsingAppService)
         {
             _browsingAppService = browsingAppService;
@@ -27,7 +30,9 @@ namespace SportsStoreNew.Controllers
         // GET: HomeController
       [AllowAnonymous]
         public IActionResult Index(string categoryName, string productName, int page = 1)
-        { 
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             var products = _browsingAppService.GetProducts(new
                 Service.Models.GetProductsRequest
             {

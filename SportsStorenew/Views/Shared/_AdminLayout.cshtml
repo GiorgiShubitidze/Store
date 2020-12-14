@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SportsStore</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link href="~/css/indexcss.css" rel="stylesheet" />
+    <link href="~/css/Layoutcss.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<body>
+
+    <!------ Include the above in your HEAD tag ---------->
+
+    <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" asp-area="" asp-controller="admin" asp-action="Index" >
+            SportsStore
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" asp-area="" asp-controller="admin" asp-action="Index" >
+
+                        <i class="fa fa-home"></i>
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-th-list" style="font-size:24px">
+
+                            <span class="badge badge-primary"></span>
+                        </i>
+                        Category
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="index" asp-route-categoryName="Pants">Pants</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index" asp-route-categoryName="Shoes">Shoes</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index" asp-route-categoryName="Underwear">Underwear</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index" asp-route-categoryName="T-Shirt">T-Shirt</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Admin" asp-action="Index" asp-route-categoryName="Jacket">Jacket</a>
+
+                        <div class="dropdown-divider"></div>
+
+                    </div>
+                </li>
+            </ul>
+            <ul class="navbar-nav ">
+
+                <li>
+                    <h2 style="color:brown;margin-right:300px;">  Admin panel </h2>
+                </li>
+                <li class="nav-item">
+                    <form method="get" for class="form-inline my-2 my-lg-3" asp-action="Index" asp-controller="Admin" asp-route-productName="Search">
+                        <input class="form-control mr-sm-2" name="productName" type="text" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fa fa-bell">
+                            <span class="badge badge-info">11</span>
+                        </i>
+                    </a>
+                </li>
+
+                <partial name="_LoginPartial" />
+
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        $(document).ready(function () {
+
+            // MDB Lightbox Init
+            $(function () {
+                $("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+
+            });
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

@@ -2,6 +2,9 @@
     @model SportsStoreNew.Service.Models.GetProductsReasponse
 
 }
+@{ 
+    Layout = "_AdminLayout";
+}
 
 @{
 
@@ -36,20 +39,20 @@
 
         <div class="container">
 
-            <div class="row"style="min-height:550px">
+            <div class="row" style="min-height:550px">
 
                 @foreach (var item in Model.Products)
                 {
                     <div class="col-md-3 col-sm-6">
                         <div class="product-grid6">
                             <div class="product-image6">
-                                <a href="@Url.Action("Details", new { Id = item.ProductId })">
+                                <a asp-controller="Home" asp-action="Details" asp-route-Id="@item.ProductId">
                                     <img src="@item.ThumbnailUrl">
                                 </a>
                             </div>
 
                             <div class=" ">
-                                <a href="@Url.Action("Details", new { Id = item.ProductId })" style="text-decoration:none">
+                                <a asp-controller="Home" asp-action="Details" asp-route-Id="@item.ProductId" style="text-decoration:none">
                                     <h3 class="title">@item.Name</h3>
                                     <div class="price">
                                         $@item.Price
@@ -58,12 +61,12 @@
                                 </a>
                             </div>
                             <p class="button">
-                                <a class="btn btn-primary product-content BtnColor " asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
-                                   asp-route-ProductId="@item.ProductId" asp-route-CategoryId="@item.CategoryId ">Add to cart</a>
-                                
+                                @*<a class="btn btn-primary product-content BtnColor " asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                                   asp-route-ProductId="@item.ProductId" asp-route-CategoryId="@item.CategoryId ">Add to cart</a>*@
 
-                                @*<a class="btn btn-primary product-content BtnColor " asp-controller="Home" asp-action="Edit"
-                                   asp-route-ProductId="@item.ProductId">Edit</a>*@
+
+                                <a class="btn btn-primary product-content BtnColor " asp-controller="Admin" asp-action="Edit"
+                                   asp-route-ProductId="@item.ProductId">Edit</a>
                             </p>
                         </div>
                     </div>
@@ -80,13 +83,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination  d-flex justify-content-md-start">
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Back" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName"><<</a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Admin" asp-action="index" asp-route-page="@Back" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName"><<</a></li>
                 @for (int i = 1; i <= Count; i++)
                 {
-                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">@i</a></li>
+                    <li class="page-item"><a class="page-link " asp-area="" asp-controller="Admin" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">@i</a></li>
                 }
 
-                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">>></a></li>
+                <li class="page-item"><a class="page-link " asp-area="" asp-controller="Admin" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">>></a></li>
 
             </ul>
         </nav>
