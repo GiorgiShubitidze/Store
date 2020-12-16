@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using SportsStorenew.Service;
@@ -21,10 +22,12 @@ namespace SportsStoreNew.Controllers
     public class HomeController : Controller
     {
         IBrowsingAppService _browsingAppService;
-        
-        
-        public HomeController(IBrowsingAppService browsingAppService)
+        private readonly IEmailSender _emailSender;
+
+
+        public HomeController(IBrowsingAppService browsingAppService ,IEmailSender emailSender)
         {
+            _emailSender = emailSender;
             _browsingAppService = browsingAppService;
         }
         // GET: HomeController
@@ -49,6 +52,32 @@ namespace SportsStoreNew.Controllers
         {
             var product = _browsingAppService.GetProduct(Id);
             return View(product); 
+        }
+        [AllowAnonymous]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult Contact(string name , string receiver,string email , string subject, string message)
+        {
+            var NameMassage = $"გამარჯობა მე ვარ {name}   {message}    მეილი: {email}";
+            if(email == null || message ==null)
+            {
+                ViewBag.Error = " თქვენი მეილი არ გაიგზვნა  , გთხოვთ შეავსოთ ყველა ველი და  სცადოთ თავიდან";
+                return View();
+            }
+            else
+            {
+                var Sent = _emailSender.SendEmailAsync("shubi1213@gmail.com", subject, NameMassage);
+                if (Sent != null)
+                {
+                    ViewBag.Success = " თქვენი მეილი წარმატებით გაიგზავნა";
+                    return View();
+                }
+            }
+            return View();
         }
 
     }

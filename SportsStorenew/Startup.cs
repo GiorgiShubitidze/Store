@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SportsStorenew.Mail;
 using SportsStorenew.Service;
 using SportsStoreNew.Areas.Identity.Pages;
 using SportsStoreNew.Domain.DB;
@@ -52,6 +54,9 @@ namespace SportsStoreNew
             services.AddScoped<ICartItems, CartItems>();
             services.AddScoped<ICheckDataService, CheckDataService>();
             services.AddDbContext<SportsStoreDbContext>();
+            //services.AddDefaultIdentity<IdentityUser>();
+            services.AddTransient<IEmailSender, EmailSender>();
+           
             services.AddRazorPages();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
                 .AddEntityFrameworkStores<SportsStoreDbContext>();

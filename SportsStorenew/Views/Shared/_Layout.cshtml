@@ -59,8 +59,17 @@
 
                     </div>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Contact" asp-route-categoryName="Home">
+
+                        <i class="fa fa-address-book"></i>
+                        Contact
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
             </ul>
             <ul class="navbar-nav ">
+
 
                 <li class="nav-item">
                     <form method="get" for class="form-inline my-2 my-lg-3" asp-action="Index" asp-controller="Home" asp-route-productName="Search">
@@ -85,8 +94,9 @@
                         </i>
                     </a>
                 </li>
+             
                 <partial name="_LoginPartial" />
-                
+
             </ul>
         </div>
     </nav>
