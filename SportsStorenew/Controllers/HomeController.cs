@@ -18,6 +18,7 @@ using SportsStoreNew.Service.Models;
 namespace SportsStoreNew.Controllers
 {
     [Authorize]
+    
    
     public class HomeController : Controller
     {

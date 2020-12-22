@@ -76,7 +76,7 @@
 
     </div>
 
-    <footer>
+    <footer class="fixed-bottom">
         <nav aria-label="Page navigation example">
             <ul class="pagination  d-flex justify-content-md-start">
 
@@ -85,7 +85,6 @@
                 {
                     <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@i" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">@i</a></li>
                 }
-
                 <li class="page-item"><a class="page-link " asp-area="" asp-controller="Home" asp-action="index" asp-route-page="@Next" asp-route-categoryName="@Model.CategoryName" asp-route-productName="@Model.ProductName">>></a></li>
 
             </ul>
