@@ -20,7 +20,7 @@ namespace SportsStoreNew.Domain.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-           optionsBuilder.UseSqlServer("server=aVTEST1;uid=AveTestLogin;database=Test2;password=Aversi2;Trusted_Connection=True;integrated security=False;");
+           optionsBuilder.UseSqlServer("server=****;uid=AveTestLogin;database=****;password=***;Trusted_Connection=True;integrated security=False;");
            // optionsBuilder.UseSqlServer("server=.;database=Test2;Trusted_Connection=True;integrated security=True;");
         }
        
