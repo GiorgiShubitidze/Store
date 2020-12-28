@@ -17,7 +17,7 @@ namespace SportsStorenew.Mail
 
                 var senderEmail = new MailAddress("Giorgi.shubitidze025@gmail.com", "SportsStore");
                 var receiverEmail = new MailAddress(email, "Receiver");
-                var password = "Aversi77";
+                var password = "*****";
                 var smtp = new SmtpClient
                 {
                     Host = "smtp.gmail.com",
